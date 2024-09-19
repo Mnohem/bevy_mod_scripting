@@ -15,7 +15,7 @@ readme = "readme.md"
 lua = ["bevy_mod_scripting_lua", "bevy_mod_scripting_lua_derive"]
 rhai = ["bevy_mod_scripting_rhai"]
 
-[target.wasm32-unknown-unknown.dependencies]
+[target.'cfg(target_arch = "wasm32")'.dependencies]
 bevy = { workspace = true, default-features = false, features = [
     "bevy_asset",
     "bevy_gltf",
