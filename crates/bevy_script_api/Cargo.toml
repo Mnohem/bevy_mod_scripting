@@ -28,8 +28,7 @@ bevy = { workspace = true, default-features = false, features = [
     "bevy_sprite",
     "multi_threaded",
 ] }
-
-[dependencies]
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
 bevy = { workspace = true, default-features = false, features = [
     "bevy_asset",
     "bevy_gltf",
@@ -43,6 +42,8 @@ bevy = { workspace = true, default-features = false, features = [
 	"file_watcher",
     "multi_threaded",
 ] }
+
+[dependencies]
 uuid = "1.10"
 bevy_mod_scripting_core = { workspace = true }
 parking_lot = "0.12.1"
