@@ -15,6 +15,20 @@ readme = "readme.md"
 lua = ["bevy_mod_scripting_lua", "bevy_mod_scripting_lua_derive"]
 rhai = ["bevy_mod_scripting_rhai"]
 
+[target.wasm32-unknown-unknown.dependencies]
+bevy = { workspace = true, default-features = false, features = [
+    "bevy_asset",
+    "bevy_gltf",
+    "bevy_animation",
+    "bevy_core_pipeline",
+    "bevy_ui",
+    "bevy_pbr",
+    "bevy_render",
+    "bevy_text",
+    "bevy_sprite",
+    "multi_threaded",
+] }
+
 [dependencies]
 bevy = { workspace = true, default-features = false, features = [
     "bevy_asset",
@@ -26,7 +40,7 @@ bevy = { workspace = true, default-features = false, features = [
     "bevy_render",
     "bevy_text",
     "bevy_sprite",
-    "file_watcher",
+	"file_watcher",
     "multi_threaded",
 ] }
 uuid = "1.10"
